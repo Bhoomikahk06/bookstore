@@ -10,27 +10,6 @@ header = {
     'Content-Type': 'application/json'
 }
 
-# @pytest.mark.asyncio
-# async def test_signup():
-#     async with httpx.AsyncClient(base_url=url) as client:
-#         data = {"email": "testuser4@example.com", "password": "password123"}
-#         response = await client.post("/signup/", json=data)
-#         logger.info(response.json())
-#         print("13:",response.json())
-#         assert response.status_code == 200
-#         # assert response.json()["name"] == "New Item"
-#
-# @pytest.mark.asyncio
-# async def test_login():
-#     async with httpx.AsyncClient(base_url=url) as client:
-#         data = {"email": "testuser4@example.com","password":"password123"}
-#         response = await client.post("/login/", json=data)
-#         logger.info("13:",response.json())
-#         assert response.status_code == 200
-#         response=response.json()
-#         token=response["access_token"]
-#         return token
-
 # Getting All the Book Details
 @pytest.mark.run(order=1)
 @pytest.mark.asyncio
@@ -41,6 +20,7 @@ async def test_get_allbooks(login):
         assert response.status_code == 200
         logger.info("Fetched all the Book details Successfully!!")
         logger.info("Books: %s",response.json())
+
 
 # Creating the book
 @pytest.mark.run(order=2)
@@ -57,7 +37,9 @@ async def test_create_book(login):
         response =await client.post("/books/", json=data,headers=header)
         assert response.status_code == 200
         logger.info("Created the Book Successfully!!")
-        logger.info("Created Book: %s", response.json())
+        response_data=response.json()
+        logger.info("Created Book: %s", response_data)
+        await test_get_allbooks(login)
 
 # Getting the created book details
 @pytest.mark.run(order=3)
@@ -69,7 +51,9 @@ async def test_get_book(login):
         logger.info("Book %s:",response.json())
         assert response.status_code == 200
         logger.info("Fetched  the Book detail Successfully!!")
-        logger.info("Book: %s",response.json())
+        response_data=response.json()
+        logger.info("Book: %s",response_data)
+        assert response_data["id"]==1
 
 # Updating the Book
 @pytest.mark.run(order=4)
@@ -85,10 +69,11 @@ async def test_update_book(login):
         }
         response =await client.put("/books/1", json=data,headers=header)
         assert response.status_code == 200
-        response=response.json()
-        assert response["published_year"]==1888
+        response_data=response.json()
+        assert response_data["published_year"]==1888
         logger.info("Updated the Book Successfully!!")
-        logger.info("Updated Book: %s", response)
+        logger.info("Updated Book: %s", response_data)
+        assert response_data["published_year"] == 1888
 
 # Deleting the Book
 @pytest.mark.run(order=5)
@@ -103,6 +88,7 @@ async def test_delete_book(login):
         assert response["message"]=="Book deleted successfully"
         logger.info("Deleted the Book Successfully!!")
         logger.info("Deleted Book: %s", response)
+        await test_get_allbooks(login)
 
 
 #Negative Testing
@@ -174,7 +160,7 @@ async def test_invalid_login_emailid():
 @pytest.mark.run(order=10)
 @pytest.mark.asyncio
 async def test_invalid_login_password():
-        data = {"email": "testusr@example.com", "password": "password1123"}
+        data = {"email": "testuser@example.com", "password": "password1123"}
         # response = await client.post("/login/", json=data)
         response = requests.post(url=f"{url}/login/", json=data)
         response_data = response.json()
