@@ -40,12 +40,16 @@ In our unit testing approach, we concentrate on verifying key API functionalitie
 
 •	Clone the code from the Repository :
     https://github.com/Bhoomikahk06/bookstore.git
+    
 •	Navigate to the project directory:
     cd bookstore
+    
 •	Install the required packages:
     pip install -r requirements.txt
+    
 •	Running the Application Start the FastAPI server
     uvicorn main:app –reload
+    
 •	Open New Terminal and Run all the tests using below command
     pytest -v -s  --html=demo.html --capture=tee-sys      
 
