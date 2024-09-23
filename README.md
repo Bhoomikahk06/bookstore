@@ -2,19 +2,20 @@
 In our unit testing approach, we concentrate on verifying key API functionalities, particularly login and CRUD operations. The signup and login processes are organized in conftest.py, with signup executed once per session to generate a Bearer token for test execution.
 
 
-•	Assertions: Each test includes assertions to confirm expected outcomes, such as correct status codes and the structure of response data.
+	•	Assertions: Each test includes assertions to confirm expected outcomes, such as correct status codes and the structure of response data.
 
-•	Logging: We utilize logging to document significant events and outcomes, facilitating issue diagnosis when tests fail and helping to identify root causes quickly.
+	•	Logging: We utilize logging to document significant events and outcomes, facilitating issue diagnosis when tests fail and helping to identify root causes quickly.
 
-•	Failure Scenarios: Tests are included for expected failure scenarios, like accessing a non-existent book, ensuring the API handles errors gracefully.
+	•	Failure Scenarios: Tests are included for expected failure scenarios, like accessing a non-existent book, ensuring the API handles errors gracefully.
 
-•	Descriptive Test Naming: Each test is clearly named to enhance readability and clarity.
+	•	Descriptive Test Naming: Each test is clearly named to enhance readability and clarity.
 
-•	Test Execution Order: By using @pytest.mark.run(order=x), we can control the order of test execution, which is essential when certain tests depend on the results of others.
+	•	Test Execution Order: By using @pytest.mark.run(order=x), we can control the order of test execution, which is essential when certain tests depend on the results of others.
 
-•	Graceful Failure Handling: Each test is designed to manage expected failures gracefully, providing detailed log messages for context during troubleshooting.
+	•	Graceful Failure Handling: Each test is designed to manage expected failures gracefully, providing detailed log messages for context during troubleshooting.
 
 2. CI/CD Setup with Jenkins
+
 Follow these steps to set up Jenkins for Continuous Integration and Continuous Deployment (CI/CD):
 1.	Download Jenkins:
 	Go to the Jenkins download page and download the Windows installer (.msi file).
@@ -23,9 +24,9 @@ Follow these steps to set up Jenkins for Continuous Integration and Continuous D
 3.	Access Jenkins:
 	Open your web browser and navigate to http://localhost:8080.
 4.	Unlock Jenkins:
-5.	o	On the initial setup page, you’ll need an unlock key found at C:\Program Files (x86)\Jenkins\secrets\initialAdminPassword. Copy and paste this key to unlock Jenkins.
+	On the initial setup page, you’ll need an unlock key found at C:\Program Files (x86)\Jenkins\secrets\initialAdminPassword. Copy and paste this key to unlock Jenkins.
 5.	Create Admin User:
-  Follow the prompts to create your first admin user.
+  	Follow the prompts to create your first admin user.
 6.	Log In:
 	Sign in using the credentials you just created.
 7.	Manage Jenkins:
