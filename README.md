@@ -16,7 +16,7 @@ In our unit testing approach, we concentrate on verifying key API functionalitie
 
 2. CI/CD Setup with Jenkins
 
-Follow these steps to set up Jenkins for Continuous Integration and Continuous Deployment (CI/CD):
+	Follow these steps to set up Jenkins for Continuous Integration and Continuous Deployment (CI/CD):
 1.	Download Jenkins:
 	Go to the Jenkins download page and download the Windows installer (.msi file).
 2.	Install Jenkins:
@@ -37,6 +37,7 @@ Follow these steps to set up Jenkins for Continuous Integration and Continuous D
 	After configuration is complete, click "Build Now" to trigger the pipeline.
 
 3.To Run Locally
+
 •	Clone the code from the Repository :
     https://github.com/Bhoomikahk06/bookstore.git
 •	Navigate to the project directory:
