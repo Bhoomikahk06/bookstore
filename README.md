@@ -17,24 +17,24 @@ In our unit testing approach, we concentrate on verifying key API functionalitie
 2. CI/CD Setup with Jenkins
 
 	Follow these steps to set up Jenkins for Continuous Integration and Continuous Deployment (CI/CD):
-1.	Download Jenkins:
-	Go to the Jenkins download page and download the Windows installer (.msi file).
-2.	Install Jenkins:
-	Double-click the downloaded .msi file and follow the installation prompts, selecting default options.
-3.	Access Jenkins:
-	Open your web browser and navigate to http://localhost:8080.
-4.	Unlock Jenkins:
-	On the initial setup page, you’ll need an unlock key found at C:\Program Files (x86)\Jenkins\secrets\initialAdminPassword. Copy and paste this key to unlock Jenkins.
-5.	Create Admin User:
-  	Follow the prompts to create your first admin user.
-6.	Log In:
-	Sign in using the credentials you just created.
-7.	Manage Jenkins:
-	Click on "Manage Jenkins" from the dashboard.
-8.	Create a Pipeline Project:
-	Select "New Item" and choose "Pipeline." Configure the pipeline using the Groovy script from your Git repository.
-9.	Build the Project:
-	After configuration is complete, click "Build Now" to trigger the pipeline.
+	1.	Download Jenkins:
+		Go to the Jenkins download page and download the Windows installer (.msi file).
+	2.	Install Jenkins:
+		Double-click the downloaded .msi file and follow the installation prompts, selecting default options.
+	3.	Access Jenkins:
+		Open your web browser and navigate to http://localhost:8080.
+	4.	Unlock Jenkins:
+		On the initial setup page, you’ll need an unlock key found at C:\Program Files (x86)\Jenkins\secrets\initialAdminPassword. Copy and paste this key to unlock Jenkins.
+	5.	Create Admin User:
+  		Follow the prompts to create your first admin user.
+	6.	Log In:
+		Sign in using the credentials you just created.
+	7.	Manage Jenkins:
+		Click on "Manage Jenkins" from the dashboard.
+	8.	Create a Pipeline Project:
+		Select "New Item" and choose "Pipeline." Configure the pipeline using the Groovy script from your Git repository.
+	9.	Build the Project:
+		After configuration is complete, click "Build Now" to trigger the pipeline.
 
 3.To Run Locally
 
