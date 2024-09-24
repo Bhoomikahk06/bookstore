@@ -32,7 +32,9 @@ To use the `Jenkinsfile` with Jenkins:
 **Run the Job**: Trigger the job to start the build process as defined in the `Jenkinsfile`.
 
 
-### To Run Locally
+## To Run Locally
+
+**Note**: Make sure Python is installed in local machine
 
 **Clone the code from the Repository**: git clone https://github.com/Bhoomikahk06/bookstore.git
     
@@ -45,17 +47,19 @@ To use the `Jenkinsfile` with Jenkins:
 
 ## Test Strategy Approach
 
-In our unit testing approach, we concentrate on verifying key API functionalities, particularly login and CRUD operations. The signup and login processes are organized in conftest.py, with signup executed once per session to generate a Bearer token for test execution.
+Our unit testing strategy emphasizes validating key API functionalities, specifically login and CRUD operations. Key components include:
 
-	•	 Each test includes assertions to confirm expected outcomes, such as correct status codes and the structure of response data.
+**Session Management**: The signup and login processes are managed in `conftest.py`, with signup executed once per session to generate a Bearer token for test execution.
 
-	•	 We utilize logging to document significant events and outcomes, facilitating issue diagnosis when tests fail and helping to identify root causes quickly.
+**Assertions**: Each test includes assertions to verify expected outcomes, such as correct status codes and response data structure.
 
-	•	 Tests are included for expected failure scenarios, like accessing a non-existent book, ensuring the API handles errors gracefully.
+**Logging**: We utilize logging to document significant events and outcomes, aiding in diagnosing issues when tests fail and identifying root causes swiftly.
 
-	•	 Each test is clearly named to enhance readability and clarity.
+**Error Handling**: Tests cover expected failure scenarios, like accessing a non-existent book, ensuring the API responds gracefully to errors.
 
-	•	 By using @pytest.mark.run(order=x), we can control the order of test execution, which is essential when certain tests depend on the results of others.
+**Readability**: Each test is clearly named to enhance clarity and readability.
 
-	•	 Each test is designed to manage expected failures gracefully, providing detailed log messages for context during troubleshooting. 
+**Execution Order**: We control the order of test execution using `@pytest.mark.run(order=x)`, which is crucial for tests that depend on previous results.
+
+**Graceful Failure Management**: Each test is designed to handle expected failures gracefully, providing detailed log messages to assist in troubleshooting.
 
