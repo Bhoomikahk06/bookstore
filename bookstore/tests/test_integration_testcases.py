@@ -82,8 +82,7 @@ async def test_update_book(login):
 async def test_delete_book(login):
     async with httpx.AsyncClient(base_url=url) as client:
         header["Authorization"] = f"Bearer {login}"
-        response_data = await client.delete("/books/1",headers=header)
-        logger.info("Book %s:",response.json())
+        response = await client.delete("/books/1",headers=header)
         assert response.status_code == 200,logger.error("Failed to Delete Book Details")
         response_data=response.json()
         assert response_data["message"]=="Book deleted successfully"
