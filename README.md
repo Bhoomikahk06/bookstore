@@ -1,4 +1,5 @@
 1. Testing Strategy
+
 In our unit testing approach, we concentrate on verifying key API functionalities, particularly login and CRUD operations. The signup and login processes are organized in conftest.py, with signup executed once per session to generate a Bearer token for test execution.
 
 
@@ -14,7 +15,7 @@ In our unit testing approach, we concentrate on verifying key API functionalitie
 
 	•	Graceful Failure Handling: Each test is designed to manage expected failures gracefully, providing detailed log messages for context during troubleshooting.
 
-2. CI/CD Setup with Jenkins
+3. CI/CD Setup with Jenkins
 
 	Follow these steps to set up Jenkins for Continuous Integration and Continuous Deployment (CI/CD):
 	1.	Download Jenkins:
