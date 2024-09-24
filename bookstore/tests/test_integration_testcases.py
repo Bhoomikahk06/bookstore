@@ -84,8 +84,8 @@ async def test_delete_book(login):
         response_data = await client.delete("/books/1",headers=header)
         logger.info("Book %s:",response.json())
         assert response.status_code == 200,logger.error("Failed to Delete Book Details")
-        response=response.json()
-        assert response["message"]=="Book deleted successfully"
+        response_data=response.json()
+        assert response_data["message"]=="Book deleted successfully"
         logger.info("Deleted the Book Successfully!!")
         logger.info("Deleted Book info: %s", response_data)
         await test_get_allbooks(login)
