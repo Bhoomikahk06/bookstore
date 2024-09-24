@@ -41,7 +41,7 @@ pipeline {
 					steps {
 						script {
 							echo 'Running tests...'
-							bat 'cd ./bookstore/tests &&  pytest -v -s  test_demo.py --html=demo.html --capture=tee-sys'
+							bat 'cd ./bookstore/tests &&  pytest -v -s  --html=demo.html --capture=tee-sys'
 						}
 					}
 				}
