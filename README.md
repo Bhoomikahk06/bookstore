@@ -1,5 +1,4 @@
 1. Testing Strategy
-
 In our unit testing approach, we concentrate on verifying key API functionalities, particularly login and CRUD operations. The signup and login processes are organized in conftest.py, with signup executed once per session to generate a Bearer token for test execution.
 
 	•	Assertions: Each test includes assertions to confirm expected outcomes, such as correct status codes and the structure of response data.
