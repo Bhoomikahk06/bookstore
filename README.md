@@ -1,6 +1,6 @@
 ## Overview
 
-This repository contains the source code for **bookstore**. It includes everything you need to build and deploy the application.
+This repository contains the source code for **bookstore**. It includes everything you need to build and test the application.
 
 ## Jenkins Integration
 
