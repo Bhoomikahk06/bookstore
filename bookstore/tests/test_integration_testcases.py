@@ -17,9 +17,10 @@ async def test_get_allbooks(login):
     async with httpx.AsyncClient(base_url=url) as client:
         header["Authorization"] = f"Bearer {login}"
         response = await client.get("/books/",headers=header)
+        response_data=response.json()
         assert response.status_code == 200,logger.error("Failed to Get Book Details")
         logger.info("Fetched all the Book details Successfully!!")
-        logger.info("Books Details are: %s",response.json())
+        logger.info("Books Details are: %s",response_data)
 
 
 # Creating the book
